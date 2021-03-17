@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/settings.dart';
 
 class BluePage extends StatelessWidget {
   @override
@@ -38,14 +40,9 @@ class _MyHomePage extends State<HomePage> {
                   Navigator.pop(context);
                 },
                 child: Text(
-                  '                                                                                       '
-                  'Keep your phone nearby when you first use your product'
-                  '                                                                                       '
-                  '                                                                                       '
-                  '                                                                                       '
-                  '                                                                                       '
-                  'It will take a few sseconds to connect to your product after using it.'
-                  'Once your product icon appears on the screen',
+                  '                                                                '
+                  '                                                                '
+                  'You can now use your product as you normally would',
                   //'I need help',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
@@ -92,13 +89,13 @@ class _MyHomePage extends State<HomePage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Text(''),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Products '),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -107,12 +104,23 @@ class _MyHomePage extends State<HomePage> {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('Settings'),
               onTap: () {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Settings()));
+              },
+            ),
+            ListTile(
+              title: Text('Log Out'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
               },
             ),
           ],

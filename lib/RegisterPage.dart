@@ -8,6 +8,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +54,47 @@ class _RegisterPageState extends State<RegisterPage> {
                     hintText: 'Enter secure password'),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20.0,
+                right: 300,
+              ),
+              // padding: EdgeInsets.symmetric(horizontal: 50),
+
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  /** Checkbox Widget **/
+                  Checkbox(
+                    value: this.value,
+                    onChanged: (bool value) {
+                      setState(() {
+                        this.value = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 40, top: 10),
+              // padding: EdgeInsets.symmetric( horizontal: 45 ),
+
+              child: Column(
+                children: [
+                  Text(
+                    'Check here to indicate that you have read and accepted the terms of Adrich',
+                    style: TextStyle(fontSize: 15.0),
+                  ), //Text
+                ], //<Widget>[]
+                //Row
+                //Column
+              ), //SizedBox
+            ),
+
             Container(
               child: FlatButton(
                 onPressed: () {
@@ -64,15 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
             ),
-            // FlatButton(
-            //   onPressed: () {
-            //     //TODO FORGOT PASSWORD SCREEN GOES HERE
-            //   },
-            //   child: Text(
-            //     'Register here',
-            //     style: TextStyle(color: Colors.blueAccent, fontSize: 15),
-            //   ),
-            // ),
+
             Container(
               height: 50,
               width: 250,

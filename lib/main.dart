@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'HomePage.dart';
 import 'RegisterPage.dart';
+import 'Bluetooth.dart';
+//import 'package:flutter_blue/flutter_blue.dart';
 
 void main() {
   runApp(MyApp());
@@ -97,7 +98,7 @@ class _LoginDemoState extends State<LoginDemo> {
               child: FlatButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => HomePage()));
+                      context, MaterialPageRoute(builder: (_) => Bluetooth()));
                 },
                 child: Text(
                   'Submit',
