@@ -35,7 +35,7 @@ class _MyHomePage extends State<HomePage> {
               //width: 350,
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(10)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -66,7 +66,7 @@ class _MyHomePage extends State<HomePage> {
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => HomePage()));

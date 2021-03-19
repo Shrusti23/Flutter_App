@@ -7,6 +7,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,28 +20,64 @@ class _SettingsState extends State<Settings> {
               //height: 50,
               //width: 350,
               decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(10)),
-              child: FlatButton(
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
                 child: Text(
                   'Notifications',
-                  style: TextStyle(color: Colors.black, fontSize: 18),
+                  style: TextStyle(color: Colors.black, fontSize: 28),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 310.0),
-              child: Center(
-                child: Container(
-                  width: 200,
-                  height: 150,
-                  /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
-                  // child: Image.asset('asset/images/flutter-logo.png')
-                ),
+              // padding: const EdgeInsets.only(
+              //   top: 30.0,
+              //   right: 300,
+              // ),
+              padding: EdgeInsets.symmetric(horizontal: 50),
+
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  /** Checkbox Widget **/
+                  Checkbox(
+                    value: this.value,
+                    onChanged: (bool value) {
+                      setState(() {
+                        this.value = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 0, bottom: 50),
+              // padding: EdgeInsets.symmetric( horizontal: 45 ),
+
+              child: Column(
+                children: [
+                  Text(
+                    'I want to recieve notifications from Adrich',
+                    style: TextStyle(fontSize: 15.0),
+                  ), //Text
+                ], //<Widget>[]
+                //Row
+                //Column
+              ), //SizedBox
+            ),
+            Padding(
+              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Phone',
+                    hintText: 'XXXXXXXXXX'),
               ),
             ),
             Container(
@@ -48,7 +85,7 @@ class _SettingsState extends State<Settings> {
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => HomePage()));
@@ -65,7 +102,7 @@ class _SettingsState extends State<Settings> {
     );
   }
 }
-/*  child: FlatButton(
+/*  child: TextButton(
             onPressed: () {
               Navigator.pop(context);
             },*/

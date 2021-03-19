@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'RegisterPage.dart';
-import 'Bluetooth.dart';
+import 'Connect.dart';
 //import 'package:flutter_blue/flutter_blue.dart';
 
 void main() {
@@ -70,7 +70,7 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             Container(
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (_) => RegisterPage()));
@@ -81,24 +81,16 @@ class _LoginDemoState extends State<LoginDemo> {
                 ),
               ),
             ),
-            // FlatButton(
-            //   onPressed: () {
-            //     //TODO FORGOT PASSWORD SCREEN GOES HERE
-            //   },
-            //   child: Text(
-            //     'Register here',
-            //     style: TextStyle(color: Colors.blueAccent, fontSize: 15),
-            //   ),
-            // ),
+
             Container(
               height: 50,
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Bluetooth()));
+                      context, MaterialPageRoute(builder: (_) => Connect()));
                 },
                 child: Text(
                   'Submit',

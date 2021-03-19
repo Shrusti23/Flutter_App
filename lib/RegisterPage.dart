@@ -96,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
 
             Container(
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -112,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => MyApp()));
@@ -133,7 +133,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
-/*  child: FlatButton(
+/*  child: TextButton(
             onPressed: () {
               Navigator.pop(context);
             },*/

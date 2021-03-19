@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/HomePage.dart';
+import 'package:flutter_application_1/Bluetooth.dart';
 //import 'package:flutter_blue/flutter_blue.dart';
 
 class BluePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Bluetooth(),
+      home: Connect(),
     );
   }
 }
 
-class Bluetooth extends StatefulWidget {
-  //MyBluetooth({Key key, this.title}) : super(key: key);
+class Connect extends StatefulWidget {
+  //MyConnect({Key key, this.title}) : super(key: key);
 
   @override
-  _MyBluetooth createState() => _MyBluetooth();
+  _MyConnect createState() => _MyConnect();
 }
 
-class _MyBluetooth extends State<Bluetooth> {
+class _MyConnect extends State<Connect> {
   // final String title;
 
   //_MyHomePage({Key key, this.title}) : super(key: key);
@@ -41,30 +41,31 @@ class _MyBluetooth extends State<Bluetooth> {
                 },
                 child: Text(
                   '                                                                                       '
-                  'Keep your phone nearby when you first use your product'
+                  'To get started,make sure your bluetooth and location are turned on.'
+                  'We recommend to let Adrich access these ALLOW ALL THE TIME'
                   '                                                                                       '
                   '                                                                                       '
                   '                                                                                       '
-                  '                                                                                       '
-                  '                                                                                       '
-                  'It will take a few sseconds to connect to your product after using it.'
-                  'Once your product icon appears on the screen',
+                  '                                                                                       ',
                   //'I need help',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 310.0),
-              child: Center(
-                child: Container(
-                  width: 200,
-                  height: 150,
-                  /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
-                  // child: Image.asset('asset/images/flutter-logo.png')
-                ),
+              padding: const EdgeInsets.only(bottom: 60.0),
+              child: IconButton(
+                icon: const Icon(Icons.location_on),
+                iconSize: 50,
+                onPressed: () {},
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 250.0),
+              child: IconButton(
+                icon: const Icon(Icons.bluetooth),
+                iconSize: 50,
+                onPressed: () {},
               ),
             ),
             Container(
@@ -75,7 +76,7 @@ class _MyBluetooth extends State<Bluetooth> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => HomePage()));
+                      context, MaterialPageRoute(builder: (_) => Bluetooth()));
                 },
                 child: Text(
                   'I need Help',
